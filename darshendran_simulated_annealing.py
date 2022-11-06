@@ -1,4 +1,5 @@
 import random
+import numpy as np
 import math
 
 iteration = 1
@@ -106,7 +107,10 @@ def simulated_annealing(array, s, s_best, initial_temp, final_temp, temp_length,
     return simulated_annealing(array, s, s_best, initial_temp, final_temp, temp_length, cooling_ratio)
 
 if __name__ == "__main__":
-    array = [-7, -3, -2, 5, 8, 3, 2, -1, 10]
+    randomSize = random.randint(4, 9)
+    array = np.random.randint(1, 10, randomSize)
+    print("Array: " + str(array))
+    print("Size: " + str(randomSize))
 
     # Step 1
     s = generate_random_solution(array, random.randint(1, len(array)))
